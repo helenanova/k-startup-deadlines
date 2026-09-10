@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "k-startup-deadlines program entry",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name_ko", "agency_ko", "application_deadline", "timezone", "source_name", "source_url", "verified_at"],
+    "properties": {
+      "id": { "type": "string", "description": "Stable unique id, e.g. kstartup-<pbancSn>" },
+      "name_ko": { "type": "string" },
+      "name_en": { "type": ["string", "null"] },
+      "agency_ko": { "type": "string" },
+      "agency_en": { "type": ["string", "null"] },
+      "ministry_ko": { "type": ["string", "null"] },
+      "category_ko": { "type": ["string", "null"] },
+      "announcement_no": { "type": ["string", "null"] },
+      "application_start": { "type": ["string", "null"], "format": "date-time" },
+      "application_deadline": { "type": "string", "format": "date-time", "description": "ISO 8601 with +09:00 offset" },
+      "timezone": { "const": "Asia/Seoul" },
+      "eligibility_ko": { "type": ["string", "null"] },
+      "support_ko": { "type": ["string", "null"] },
+      "source_name": { "type": "string" },
+      "source_url": { "type": "string", "format": "uri" },
+      "verified_at": { "type": "string", "format": "date" }
+    },
+    "additionalProperties": false
+  }
+}
